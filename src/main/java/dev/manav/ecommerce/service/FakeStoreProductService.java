@@ -13,8 +13,11 @@ import java.util.List;
 public class FakeStoreProductService implements ProductService {
     @Autowired
     private RestTemplate restTemplate;
+    @Override
     public Product getSingleProduct(int id) {
-        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id, FakeStoreProductDto.class);
+        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject
+                ("https://fakestoreapi.com/products/" + id,
+                        FakeStoreProductDto.class);
 
         if(fakeStoreProductDto == null) {
             throw new ProductNotFoundException("Product not found " +

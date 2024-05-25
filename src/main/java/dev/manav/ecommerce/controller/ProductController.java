@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -16,7 +17,7 @@ public class ProductController {
     @Qualifier("FakeStoreProductService")
     private ProductService productService;
 
-    @PostMapping("product/{id}")
+    @GetMapping("/product/{id}")
     public ResponseEntity getProduct(@PathVariable("id") int id) {
         Product currentProduct = productService.getSingleProduct(id);
         ResponseEntity<Product> res = new ResponseEntity<>(currentProduct, HttpStatus.OK);
