@@ -28,4 +28,16 @@ public class FakeStoreProductDto {
         product.setCategory(productCategory);
         return product;
     }
+
+    public static FakeStoreProductDto toFakeStoreProductDto( Product product)
+    {
+        FakeStoreProductDto fakeStoreProductDto = new FakeStoreProductDto();
+        fakeStoreProductDto.setId(product.getId());
+        fakeStoreProductDto.setTitle(product.getTitle());
+        fakeStoreProductDto.setDescription(product.getDescription());
+        fakeStoreProductDto.setPrice(product.getPrice());
+        fakeStoreProductDto.setImage(product.getImageUrl());
+        fakeStoreProductDto.setCategory(product.getCategory().getCategoryName());
+        return fakeStoreProductDto;
+    }
 }

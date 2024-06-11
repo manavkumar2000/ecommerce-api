@@ -10,8 +10,8 @@ public interface ProductService {
 
     public Product getSingleProduct(int id);
     public List<Product> getAllProducts();
-    public boolean addProduct(Product product);
-    public boolean updateProduct(Product product);
-    public boolean deleteProduct(int id);
+    public Product addProduct(Product product);
+    public Product updateProduct(Product product);
+    public Product deleteProduct(int id);
     public List<Product> getProductsByCategory(String category);
 }
